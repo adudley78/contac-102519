@@ -22,10 +22,10 @@ const App = () => {
               <div className='container'>
                 <Alerts />
                 <Switch>
-                  <Route exaxt path='/' component={Home} />
-                  <Route exaxt path='/about' component={About} />
-                  <Route exaxt path='/register' component={Register} />
-                  <Route exaxt path='/login' component={Login} />
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/about' component={About} />
+                  <Route exact path='/register' component={Register} />
+                  <Route exact path='/login' component={Login} />
                 </Switch>
               </div>
             </Fragment>
