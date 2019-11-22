@@ -21,8 +21,8 @@ router.get('/', auth, async (req, res) => {
 router.post(
   '/',
   [
-    check('email', 'Please include a valid email.').isEmail(),
-    check('password', 'Password is required.').exists()
+    check('email', 'Please include a valid email').isEmail(),
+    check('password', 'Password is required').exists()
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -55,7 +55,6 @@ router.post(
         payload,
         config.get('jwtSecret'),
         {
-          // REMINDER: Change prior to deployment.
           expiresIn: 360000
         },
         (err, token) => {
@@ -64,7 +63,7 @@ router.post(
         }
       );
     } catch (err) {
-      console.err(err.message);
+      console.error(err.message);
       res.status(500).send('Server Error');
     }
   }
